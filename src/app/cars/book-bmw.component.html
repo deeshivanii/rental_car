@@ -1,0 +1,159 @@
+<div
+  class="booking-page bmw-theme animate-fade-in"
+  [class.light-mode]="!themeService.isDarkTheme()"
+>
+  <div class="container py-5">
+    <!-- Back Button -->
+    <div class="mb-4">
+      <a
+        routerLink="/bmw"
+        class="btn back-btn rounded-pill px-4 py-2"
+        [class.light-mode]="!themeService.isDarkTheme()"
+      >
+        <i class="bi bi-arrow-left me-2"></i> Back to Selection
+      </a>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div
+          class="booking-card p-4 p-md-5 rounded-4 shadow-lg"
+          [class.light-mode]="!themeService.isDarkTheme()"
+        >
+          <!-- Header with Car Preview -->
+          <div class="row align-items-center mb-5">
+            <div class="col-md-6 text-center text-md-start">
+              <div class="brand-logo-mini mb-2">
+                <span class="logo-text">Elite<span class="logo-accent">Drive</span></span>
+              </div>
+              <h2 class="display-5 fw-bold premium-title">Book Your {{ selectedCar }}</h2>
+              <p class="premium-subtitle opacity-75">The Ultimate Driving Machine</p>
+            </div>
+            <div class="col-md-6 text-center">
+              <img [src]="selectedCarImage" [alt]="selectedCar" class="img-fluid car-preview-img">
+            </div>
+          </div>
+
+          <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="premium-form">
+            <div class="row g-4">
+              <!-- Name Field -->
+              <div class="col-12">
+                <label for="name" class="form-label fw-bold">Enter Your Name</label>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-control premium-input"
+                    [class.light-mode]="!themeService.isDarkTheme()"
+                    formControlName="name"
+                    placeholder="E.g. James Bond"
+                  />
+                </div>
+                <div
+                  *ngIf="bookingForm.get('name')?.touched && bookingForm.get('name')?.invalid"
+                  class="error-msg"
+                >
+                  Please enter your full name (min 3 chars).
+                </div>
+              </div>
+
+              <!-- Age and License Row -->
+              <div class="col-md-6">
+                <label for="age" class="form-label fw-bold">Age <span class="req-hint">(Must be 18+)</span></label>
+                <input
+                  type="number"
+                  id="age"
+                  class="form-control premium-input"
+                  [class.light-mode]="!themeService.isDarkTheme()"
+                  formControlName="age"
+                  placeholder="Your Age"
+                />
+                <div
+                  *ngIf="bookingForm.get('age')?.touched && bookingForm.get('age')?.invalid"
+                  class="error-msg"
+                >
+                  Minors are not permitted to rent.
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="licenseNumber" class="form-label fw-bold">License Number <span class="req-hint">(16 Digits)</span></label>
+                <input
+                  type="text"
+                  id="licenseNumber"
+                  class="form-control premium-input"
+                  [class.light-mode]="!themeService.isDarkTheme()"
+                  formControlName="licenseNumber"
+                  placeholder="XXXX XXXX XXXX XXXX"
+                  maxlength="16"
+                />
+                <div
+                  *ngIf="bookingForm.get('licenseNumber')?.touched && bookingForm.get('licenseNumber')?.invalid"
+                  class="error-msg"
+                >
+                  Invalid 16-digit license number.
+                </div>
+              </div>
+
+              <!-- Duration Selection -->
+              <div class="col-12 mt-5">
+                <h5 class="section-title mb-4">Duration :</h5>
+                <div class="options-grid">
+                  <div *ngFor="let d of durations" class="option-item">
+                    <input
+                      type="radio"
+                      [id]="'d-'+d"
+                      [value]="d"
+                      formControlName="duration"
+                      class="btn-check"
+                    />
+                    <label
+                      [for]="'d-'+d"
+                      class="btn btn-premium-option w-100 py-3"
+                      [class.light-mode]="!themeService.isDarkTheme()"
+                    >
+                      {{ d }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Time Slot Selection -->
+              <div class="col-12 mt-5">
+                <h5 class="section-title mb-4">Time Slot :</h5>
+                <div class="options-grid time-slots">
+                  <div *ngFor="let slot of timeSlots" class="option-item">
+                    <input
+                      type="radio"
+                      [id]="'s-'+slot"
+                      [value]="slot"
+                      formControlName="timeSlot"
+                      class="btn-check"
+                    />
+                    <label
+                      [for]="'s-'+slot"
+                      class="btn btn-premium-option w-100 py-2"
+                      [class.light-mode]="!themeService.isDarkTheme()"
+                    >
+                      {{ slot }}
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Confirm Button -->
+              <div class="col-12 mt-5 text-center">
+                <button
+                  type="submit"
+                  class="btn btn-confirm-booking rounded-pill px-5 py-3 fw-bold"
+                >
+                  CONFIRM BMW BOOKING
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

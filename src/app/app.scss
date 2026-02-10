@@ -1,0 +1,51 @@
+.app-content {
+  min-height: calc(100vh - 100px); // subtract estimated footer height
+}
+
+.app-footer {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  
+  .logo-text {
+    letter-spacing: 1px;
+  }
+
+  .social-links {
+    a {
+      font-size: 1.2rem;
+      color: inherit;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  border-top-color: rgba(128, 128, 128, 0.1) !important;
+}
+
+body.dark-mode .app-footer {
+  background-color: #0d0d0d;
+  color: var(--text-dark);
+}
+
+body.light-mode .app-footer {
+  background-color: #f8f9fa;
+  color: var(--text-light);
+}
+
+.app-footer {
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+
+  .color-footer {
+    color: var(--text);
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.85;
+      text-decoration: underline;
+    }
+  }
+}

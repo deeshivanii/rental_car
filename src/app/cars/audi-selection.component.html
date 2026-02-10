@@ -1,0 +1,100 @@
+<div class="selection-page audi-preview animate-fade-in" [class.light-mode]="!themeService.isDarkTheme()">
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <a routerLink="/" 
+         class="btn back-btn rounded-pill px-4 py-2"
+         [class.light-mode]="!themeService.isDarkTheme()">
+        <i class="bi bi-arrow-left me-2"></i> Back to Fleet
+      </a>
+
+      <!-- EliteDrive Logo -->
+      <div class="brand-logo-mini">
+        <span class="logo-text">Elite<span class="logo-accent">Drive</span></span>
+      </div>
+    </div>
+
+    <div class="container text-center" [class.text-white]="themeService.isDarkTheme()" [class.text-dark]="!themeService.isDarkTheme()">
+      <div class="view-header p-5 rounded-4 shadow-lg mb-5" [class.light-mode]="!themeService.isDarkTheme()">
+        <img src="images/audilogo.jpg" alt="Audi Logo" class="brand-logo-img mb-4" style="width: 100px;">
+        <h1 class="display-3 fw-bold mb-3 premium-title">Audi Prestige</h1>
+        <p class="lead premium-subtitle" [class.opacity-75]="themeService.isDarkTheme()" [class.text-muted]="!themeService.isDarkTheme()">
+         Advantage through technology - Progress through Technology
+        </p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="selection-card p-4 rounded-4" [class.light-mode]="!themeService.isDarkTheme()">
+            <img src="images/BMWSERIES%205.png" alt="Audi A6" class="img-fluid mb-3 rounded-3">
+            <h4 class="fw-bold">Audi A6</h4>
+            <p class="text-muted small"
+             [class.text-white-50]="themeService.isDarkTheme()" 
+         [class.text-muted]="!themeService.isDarkTheme()">
+        Sophistication in every detail.</p>
+            <div class="d-flex justify-content-end align-items-center mt-3">
+              <!-- <span class="fw-bold">$130/day</span> -->
+              <button [routerLink]="['/book-audi']" [queryParams]="{ car: 'Audi A6', img: 'images/BMWSERIES%205.png' }" class="btn btn-sm btn-outline-danger rounded-pill px-3">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="selection-card p-4 rounded-4" [class.light-mode]="!themeService.isDarkTheme()">
+            <img  src="images/Audi%20Q8%20(3).png" alt="Audi Q8" class="img-fluid mb-3 rounded-3">
+            <h4 class="fw-bold">Audi Q8</h4>
+            <p class="text-muted small"
+             [class.text-white-50]="themeService.isDarkTheme()" 
+         [class.text-muted]="!themeService.isDarkTheme()">The definitive luxury SUV.</p>
+            <div class="d-flex justify-content-end align-items-center mt-3">
+              <!-- <span class="fw-bold">$160/day</span> -->
+              <button [routerLink]="['/book-audi']" [queryParams]="{ car: 'Audi Q8', img: 'images/Audi%20Q8%20(3).png' }" class="btn btn-sm btn-outline-danger rounded-pill px-3">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="selection-card p-4 rounded-4" [class.light-mode]="!themeService.isDarkTheme()">
+            <img src="images/Audi%20R8.png" alt="Audi R8" class="img-fluid mb-3 rounded-3">
+            <h4 class="fw-bold">Audi R8</h4>
+            <p class="text-muted small"
+             [class.text-white-50]="themeService.isDarkTheme()" 
+         [class.text-muted]="!themeService.isDarkTheme()">Legendary performance, daily driveable.</p>
+            <div class="d-flex justify-content-end align-items-center mt-3">
+              <!-- <span class="fw-bold">$350/day</span> -->
+              <button [routerLink]="['/book-audi']" [queryParams]="{ car: 'Audi R8', img: 'images/Audi%20R8.png' }" class="btn btn-sm btn-outline-danger rounded-pill px-3">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-highlights row g-4 text-start mb-5">
+        <div class="col-md-6">
+          <div class="highlight-item d-flex align-items-center p-3 rounded-3" [class.bg-white-5]="themeService.isDarkTheme()" [class.bg-light]="!themeService.isDarkTheme()">
+            <div class="highlight-icon me-3">
+              <i class="bi bi-cpu text-danger fs-3"></i>
+            </div>
+            <div>
+              <h5 class="mb-1 fw-bold">Virtual Cockpit</h5>
+              <p class="small text-muted mb-0"
+                [class.text-white-50]="themeService.isDarkTheme()" 
+            [class.text-muted]="!themeService.isDarkTheme()">
+            Experience Audi's latest digital dashboard technology.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="highlight-item d-flex align-items-center p-3 rounded-3" [class.bg-white-5]="themeService.isDarkTheme()" [class.bg-light]="!themeService.isDarkTheme()">
+            <div class="highlight-icon me-3">
+              <i class="bi bi-snow text-danger fs-3"></i>
+            </div>
+            <div>
+              <h5 class="mb-1 fw-bold">Quattro AWD</h5>
+              <p class="small text-muted mb-0"
+                [class.text-white-50]="themeService.isDarkTheme()" 
+            [class.text-muted]="!themeService.isDarkTheme()">
+            Unmatched grip and safety in all weather conditions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

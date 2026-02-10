@@ -1,0 +1,40 @@
+/* Global styles and Bootstrap */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --bg-dark: radial-gradient(circle at top right, #1a1a1a, #0d0d0d);
+  --bg-light: radial-gradient(circle at top right, #ffffff, #f0f2f5);
+  --text-dark: #ffffff;
+  --text-light: #1a1a1a;
+  --header-bg-dark: rgba(255, 255, 255, 0.03);
+  --header-bg-light: rgba(0, 0, 0, 0.03);
+}
+
+body.dark-mode {
+  background: #0d0d0d;
+  color: var(--text-dark);
+}
+
+body.light-mode {
+  background: #f0f2f5;
+  color: var(--text-light);
+}
+
+/* Utility focus ring for keyboard users */
+:focus-visible {
+  outline: 3px solid #4c9ffe;
+  outline-offset: 2px;
+}
+
+/* Container defaults */
+.container {
+	max-width: 1140px;
+}
+
+.bg-white-5 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2px;
+}

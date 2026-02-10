@@ -1,0 +1,101 @@
+<div class="selection-page bmw-preview animate-fade-in" [class.light-mode]="!themeService.isDarkTheme()">
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <a routerLink="/" 
+         class="btn back-btn rounded-pill px-4 py-2"
+         [class.light-mode]="!themeService.isDarkTheme()">
+        <i class="bi bi-arrow-left me-2"></i> Back to Fleet
+      </a>
+
+      <!-- EliteDrive Logo -->
+      <div class="brand-logo-mini">
+        <span class="logo-text">Elite<span class="logo-accent">Drive</span></span>
+      </div>
+    </div>
+
+    <div class="container text-center" [class.text-white]="themeService.isDarkTheme()" [class.text-dark]="!themeService.isDarkTheme()">
+      <div class="view-header p-5 rounded-4 shadow-lg mb-5" [class.light-mode]="!themeService.isDarkTheme()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo" class="brand-logo-img mb-4" style="width: 80px;" referrerpolicy="no-referrer">
+        <h1 class="display-3 fw-bold mb-3 premium-title">BMW Collection</h1>
+        <p class="lead premium-subtitle" [class.opacity-75]="themeService.isDarkTheme()" [class.text-muted]="!themeService.isDarkTheme()">
+          Ultimate Driving Machines for Every Occasion
+        </p>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="selection-card p-4 rounded-4" [class.light-mode]="!themeService.isDarkTheme()">
+            <img src="images/AUDISERIES%205.png"
+             alt="BMW 5 Series" class="img-fluid mb-3 rounded-3">
+            
+            <h4 class="fw-bold">5 Series</h4>
+            <p class="text-muted small"
+            [class.text-white-50]="themeService.isDarkTheme()" 
+            [class.text-muted]="!themeService.isDarkTheme()">
+            The benchmark executive sedan.</p>
+            <div class="d-flex justify-content-end align-items-center mt-3">
+              <!-- <span class="fw-bold">$120/day</span> -->
+              <button [routerLink]="['/book-bmw']" [queryParams]="{ car: '5 Series', img: 'images/AUDISERIES%205.png' }" class="btn btn-sm btn-outline-primary rounded-pill px-3">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="selection-card p-4 rounded-4" [class.light-mode]="!themeService.isDarkTheme()">
+            <img src="images/BMW%20M4%20Coupe.png" alt="BMW M4" class="img-fluid mb-3 rounded-3">
+            <h4 class="fw-bold">M4 Coupe</h4>
+            <p class="text-muted small"
+           [class.text-white-50]="themeService.isDarkTheme()" 
+         [class.text-muted]="!themeService.isDarkTheme()">
+         Pure performance, pure emotion.</p>
+            <div class="d-flex justify-content-end align-items-center mt-3">
+                    <!-- <span class="fw-bold">$180/day</span> -->
+              <button [routerLink]="['/book-bmw']" [queryParams]="{ car: 'M4 Coupe', img: 'images/BMW%20M4%20Coupe.png' }" class="btn btn-sm btn-outline-primary rounded-pill px-3">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="selection-card p-4 rounded-4" [class.light-mode]="!themeService.isDarkTheme()">
+            <img src="images/BMW%20X5%20SUV.png" alt="BMW X5" class="img-fluid mb-3 rounded-3" style="filter: brightness(0.8);">
+            <h4 class="fw-bold">X5 SUV</h4>
+            <p class="text-muted small"
+          [class.text-white-50]="themeService.isDarkTheme()" 
+         [class.text-muted]="!themeService.isDarkTheme()">Versatility meets luxury.</p>
+            <div class="d-flex justify-content-end align-items-center mt-3">
+              <!-- <span class="fw-bold">$150/day</span> -->
+              <button [routerLink]="['/book-bmw']" [queryParams]="{ car: 'X5 SUV', img: 'images/BMW%20X5%20SUV.png' }" class="btn btn-sm btn-outline-primary rounded-pill px-3">Book Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-highlights row g-4 text-start mb-5">
+        <div class="col-md-6">
+          <div class="highlight-item d-flex align-items-center p-3 rounded-3" [class.bg-white-5]="themeService.isDarkTheme()" [class.bg-light]="!themeService.isDarkTheme()">
+            <div class="highlight-icon me-3">
+              <i class="bi bi-shield-check text-primary fs-3"></i>
+            </div>
+            <div>
+              <h5 class="mb-1 fw-bold">Comprehensive Insurance</h5>
+              <p class="small text-muted mb-0"
+          [class.text-white-50]="themeService.isDarkTheme()" 
+         [class.text-muted]="!themeService.isDarkTheme()">Full coverage included with every BMW rental.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="highlight-item d-flex align-items-center p-3 rounded-3" [class.bg-white-5]="themeService.isDarkTheme()" [class.bg-light]="!themeService.isDarkTheme()">
+            <div class="highlight-icon me-3">
+              <i class="bi bi-geo-alt text-primary fs-3"></i>
+            </div>
+            <div>
+              <h5 class="mb-1 fw-bold">Unlimited Mileage</h5>
+              <p class="small text-muted mb-0"
+        [class.text-white-50]="themeService.isDarkTheme()" 
+         [class.text-muted]="!themeService.isDarkTheme()">Drive as far as your heart desires across the country.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
