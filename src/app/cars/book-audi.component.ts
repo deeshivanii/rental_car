@@ -29,10 +29,11 @@ export class BookAudiComponent implements OnInit {
 
   bookingForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required, Validators.email]],
     age: ['', [Validators.required, Validators.min(18)]],
     licenseNumber: ['', [Validators.required, Validators.pattern(/^\d{16}$/)]],
-    duration: ['20 minutes', Validators.required],
-    timeSlot: ['9:00 AM', Validators.required]
+    duration: ['', Validators.required],
+    timeSlot: ['', Validators.required]
   });
 
   durations = ['20 minutes 20000 INR', '30 minutes  30000 INR', '1 Hour 80000 INR'];
@@ -46,6 +47,7 @@ export class BookAudiComponent implements OnInit {
         queryParams: {
           carName: this.selectedCar,
           name: formValue.name,
+          email: formValue.email,
           age: formValue.age,
           licenseNumber: formValue.licenseNumber,
           duration: formValue.duration,

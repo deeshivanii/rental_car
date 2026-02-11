@@ -29,6 +29,7 @@ export class BookBmwComponent implements OnInit {
 
   bookingForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
+    email: ['', [Validators.required, Validators.email]],
     age: ['', [Validators.required, Validators.min(18)]],
     licenseNumber: ['', [Validators.required, Validators.pattern(/^\d{16}$/)]],
     duration: ['20 minutes', Validators.required],
@@ -46,6 +47,7 @@ export class BookBmwComponent implements OnInit {
         queryParams: {
           carName: this.selectedCar,
           name: formValue.name,
+          email: formValue.email,
           age: formValue.age,
           licenseNumber: formValue.licenseNumber,
           duration: formValue.duration,
