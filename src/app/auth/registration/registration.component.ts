@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink } from '@angular/router';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit {
   registrationForm: FormGroup;
   loading = false;
   submitted = false;
@@ -35,6 +35,10 @@ export class RegistrationComponent {
     }, {
       validators: this.passwordMatchValidator
     });
+  }
+
+  ngOnInit(): void {
+    // Initialization logic if needed
   }
 
   get f() {

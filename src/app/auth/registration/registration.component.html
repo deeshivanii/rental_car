@@ -129,8 +129,8 @@
           class="form-control"
           [class.is-invalid]="submitted && (f['confirmPassword'].errors || registrationForm.errors?.['passwordMismatch'])"
         />
-        <div *ngIf="submitted && (f['confirmPassword'].errors || registrationForm.errors?.['passwordMismatch'])" class="invalid-feedback">
-          <small *ngIf="f['confirmPassword'].errors['required']">Please confirm your password</small>
+        <div *ngIf="submitted && (f['confirmPassword']?.errors || registrationForm.errors?.['passwordMismatch'])" class="invalid-feedback">
+          <small *ngIf="f['confirmPassword']?.errors?.['required']">Please confirm your password</small>
           <small *ngIf="registrationForm.errors?.['passwordMismatch']">Passwords do not match</small>
         </div>
       </div>
