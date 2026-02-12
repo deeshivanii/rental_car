@@ -8,6 +8,8 @@ import { VerifyAudiDetailsComponent } from './cars/verify-audi.component';
 import { VerifyBmwDetailsComponent } from './cars/verify-bmw.component';
 import { SuccessAudiComponent } from './cars/success-audi.component';
 import { SuccessBmwComponent } from './cars/success-bmw.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistrationComponent } from './auth/registration/registration.component';
 
 export const routes: Routes = [
 	{ path: '', component: CarChoiceComponent },
@@ -19,5 +21,12 @@ export const routes: Routes = [
 	{ path: 'verify-bmw', component: VerifyBmwDetailsComponent },
 	{ path: 'success-audi', component: SuccessAudiComponent },
 	{ path: 'success-bmw', component: SuccessBmwComponent },
+	{
+		path: 'auth',
+		children: [
+			{ path: 'login', component: LoginComponent },
+			{ path: 'registration', component: RegistrationComponent }
+		]
+	},
 	{ path: '**', redirectTo: '' }
 ];
